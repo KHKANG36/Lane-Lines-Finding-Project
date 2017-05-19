@@ -25,6 +25,7 @@ To detect the lane line and draw line on the image/video, below steps was implem
 
 This is the result of the pipeline on the image:  
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/examples/Test_image1.png)
+
 More detailed explanation for the project is written on "writeup_RyanKang.md" file. 
 
 ## Discussion/Issues 
