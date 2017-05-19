@@ -15,6 +15,7 @@ Run the `Project1_Code_RyanKang.ipynb` on the ipython notebook. Please modify th
 
 ## About the Project 
 
+Detailed explanation for the project is written on "writeup_RyanKang.md" file. 
 To detect the lane line and draw line on the image/video, below steps was implemented: 
 
 1. Convert the images to grayscale
