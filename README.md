@@ -15,9 +15,19 @@ Run the `Project1_Code_RyanKang.ipynb` on the ipython notebook. Please modify th
 
 ## About the Project 
 
-In my pipeline, I converted the images to grayscale initially. Then, I smoothed the converted image to reduce unnecessary noise. After that, I acquired x,y coordinates of image edges by applying "Canny edge detection" algorithm. To apply better region of interests, I analyzed the location of lane-lines for all the images/videos and found optimal 4 vertices based on the height and width information of the images. In order to draw a single line on the left and right lanes, I implemented the draw_lines() function followed by below steps. 1) I separated left and right lane-lines based on the slope of edge-detected lines. If slope > 0, we can guess it right lane. Otherwise, if slope < 0, we can guess it left lane. However, if the value of slope is too small, it might not be a lane-line and might be wrong-detected information. Therefore, I used "0.3" value for lane judgement to increase the correctness. 2) I set Y_max height of the image and found Y_min by comparing all y values. 3) I calculated average slope and average y-intercept of left and right lane each. 4) Based on all information (average slope, y_min, y_max and average y-intercept), I was able to find the x_min, x_max value as well. 5) I Drawed the straight-line with x_min, y_min, x_max, y_max. This is the result of the pipeline on the image:  
+To detect the lane line and draw line on the image/video, below steps was implemented: 
+
+1. Convert the images to grayscale
+2. Smooth the converted image to reduce unnecessary noise
+3. Acquire x,y coordinates of image edges by applying "Canny edge detection" algorithm
+4. Apply trapezoid region of interests(ROI) to remove unnecessary image parts 
+5. Draw a single line on the detected left and right lanes (Refer to algorithm of draw_lines() function)  
+
+This is the result of the pipeline on the image:  
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/examples/Test_image1.png)
 
-## Discussion 
+## Discussion/Issues 
 
-1)Potential shortcoming would be the accuracy of the region of interets. Location of the lane could be different with vehicle location or road environment/curve. So, it is inevitable that there should be an error of region of interests even though the location of fixed camera is almost same. We should come up with algorithms which can adopt the region of interest to different image/video intelligently. 2)Another shortcoming could be the accuracy of average slope and average y-intercept. Averaging would not be optimal solution to estimate the optimal slope and y-intercept. So, I tried to optimize the values by using "GradientDecentOptimizer" with tensorflow library. Even though it does not work well, eventually learning based regression algorithm would be useful for this project. 3)The parameter selection for Canny & Hough algorithm was not perfect. 4) When it comes to last "challenge" video, my pipeline didn't work well. The drawed line was not stable because of the sharply curved lane images in video clip.
+1. Accuracy of the region of interests. How can adopt the region of interest to different image/video intelligently? 
+2. The optimal parameter selection for Canny edge detection & Hough algorithm
+3. Unstable lane line for "challengable" video which has sharp curve, lots of shadow, road pavement and so on.
