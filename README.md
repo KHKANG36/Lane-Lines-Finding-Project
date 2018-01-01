@@ -1,12 +1,10 @@
-# Lane line detection/tracking project
-In this project, I implemented to classify multiple objects on the road pixel by pixel based on the semantic segmentation technique. All codes are written on the iPython notebook. I trained the network with "Cityscape-dataset", and appreciate for using it.  
+# Lane line detection/tracking project (Ver.2)
+In this project, I implemented the algorithm which detects lane line on the road based on the computer vision technique. In particular, I used a variety of computer vision techniques and unique algorithms to make it robust. All codes are written on the iPython notebook. 
 
 ## Requirement 
 - Python 3.0 >
-- Tensorflow 1.0 >
 - Numpy
-- Scipy
-- [Cityscape Dataset](https://www.cityscapes-dataset.com/downloads/) 
+- CV2
   
 ## Run the Project 
 Download the Cityscape dataset (You have to sign up). Extract the dataset in the 'data' folder. Make 'training', 'testing' folder and put all the revelant data to each folder. Open the 'Semantic_segmentation_cityscape.ipynb' file and run it sequencially. 
