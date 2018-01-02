@@ -16,7 +16,7 @@ Below is project pipeline used in this project.
 
 1) Color image to gray scale → Gaussian bluring → Canny edge detection 
 - Below is the original image which I tested in my algorithm.  
-![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/DK2.jpg){: width="100px" height="20px"}
+![Test image|512x397,20%](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/DK2.jpg)
 - In order to apply canny edge detection, I converted the color image in gray scale. With gaussian bluring, we can remove noise which hinder to detect the edge correctly. I applied the canny edge detection to blurred gray scale image.
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/edge_detect_result.png)
 
