@@ -14,12 +14,13 @@ Below is project pipeline used in this project.
 
 (1) Color image to gray scale → (2) Gaussian bluring → (3) Canny edge detection → (4) Color image to HLS scale and H-channel & S-channel → (5) Combine all (H-channel AND S-channel OR Canny edge detection) → (6) Masking with ROI(Region of Interest) → (7) Hough Transform and draw lines 
 
-1) Color image to gray #scale  
-- I used FCN-8 encoder/decoder architecture. I loaded pretrained VGG16 model into tensorflow followed by 1 by 1 convolution for spartial information. Then, I created the layers for a FCN (Fully Convolutional Network) using deconvolution and skip connection technique. For the detailed undertanding, please refer to below architecture image which I used in this project. 
-![Test image](https://github.com/KHKANG36/Semantic-Segmentation/blob/master/FCN%20for%20Semantic%20Seg.gif)
+1) Color image to gray scale → Gaussian bluring → Canny edge detection 
+- In order to apply canny edge detection, I converted the color image in gray scale. With gaussian bluring, we can remove noise which hinder to detect the edge correctly. I applied the canny edge detection to blurred gray scale image.
+![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/sample_images/edge_detect_result.png)
 
 2) Class
 - I classified 4 objects in this simulation. (Road - Purple, Vehicle - Blue, Ped - Red, Traffic Light - Yellow)
+Gray lose yellow color & canny edge can not detect the yellow 
  
 ## The Result
 1) Cityscape dataset test images
