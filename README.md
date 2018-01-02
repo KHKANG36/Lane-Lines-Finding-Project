@@ -16,9 +16,9 @@ Below is project pipeline used in this project.
 
 1) Color image to gray scale → Gaussian bluring → Canny edge detection 
 - Below is the original image which I tested in my algorithm.  
-![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/DK2.jpg){:height="700px" width="400px"}
+![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/DK2.jpg)
 - In order to apply canny edge detection, I converted the color image in gray scale. With gaussian bluring, we can remove noise which hinder to detect the edge correctly. I applied the canny edge detection to blurred gray scale image.
-![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/edge_detect_result.png)
+![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/DK2.jpg) ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/edge_detect_result.png)
 
 2) Class
 - I classified 4 objects in this simulation. (Road - Purple, Vehicle - Blue, Ped - Red, Traffic Light - Yellow)
