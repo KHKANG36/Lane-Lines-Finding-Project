@@ -12,11 +12,9 @@ Open the 'Lane_line_detection.ipynb' file and run it sequencially. All required 
 ## Project Implementation
 Below is project pipeline used in this project.
 
-(1) Color image to gray scale → (2) Gaussian bluring → (3) Canny edge detection  
-(4) Color image to HLS scale and H-channel & S-channel → (5) Combine all (H-channel AND S-channel OR Canny edge detection) →
-(6) Masking with ROI(Region of Interest) → (7) Hough Transform and draw lines 
+(1) Color image to gray scale → (2) Gaussian bluring → (3) Canny edge detection → (4) Color image to HLS scale and H-channel & S-channel → (5) Combine all (H-channel AND S-channel OR Canny edge detection) → (6) Masking with ROI(Region of Interest) → (7) Hough Transform and draw lines 
 
-1) Neural Network Architecture  
+1) Color image to gray #scale  
 - I used FCN-8 encoder/decoder architecture. I loaded pretrained VGG16 model into tensorflow followed by 1 by 1 convolution for spartial information. Then, I created the layers for a FCN (Fully Convolutional Network) using deconvolution and skip connection technique. For the detailed undertanding, please refer to below architecture image which I used in this project. 
 ![Test image](https://github.com/KHKANG36/Semantic-Segmentation/blob/master/FCN%20for%20Semantic%20Seg.gif)
 
