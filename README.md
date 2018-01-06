@@ -22,6 +22,8 @@ Below is project pipeline used in this project.
 **2) Color image to HLS scale and extract H-channel & S-channel** 
 - When we look at the above "canny edge detection" image, we can recognize that we lost some yellow lane line information in the lighted region. In the below image, we can also see that we lose valuable yellow color information when we convert the image in grayscale.
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/gray_scale_yellowline.png) 
+
+- I converted RGB image to HLS color scale and extract the H-channel and S-channel. 
  
 ## The Result
 1) Cityscape dataset test images
