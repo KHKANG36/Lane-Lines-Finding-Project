@@ -28,7 +28,12 @@ Below is project pipeline used in this project.
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/s_channel_result.png)
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/h_channel_result.png) 
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/combined_result.png) 
- 
+
+**3) Masking with ROI (Region of Interest)** 
+- I used 4 vertices for the masking with ROI : (100,height),(width/2-45,height/2+60),(width/2+45,height/2+60),(width-50,height)
+- Below image is extracted binary image from our ROI(region of interest)
+![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/masked_result.png)
+
 ## The Result
 1) Cityscape dataset test images
 - Mostly, it could pretty much classify most of the objects.
