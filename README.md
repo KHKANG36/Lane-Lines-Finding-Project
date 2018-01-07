@@ -24,6 +24,7 @@ Below is project pipeline used in this project.
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/gray_scale_yellowline.png) 
 
 - I converted RGB image to HLS color scale and extract the S-channel and H-channel. As below binary images, we can see that both channel recognize the yellow line well. However, S-channel is weak for the shadow. Otherwise, H-channel is weak for the light. Therefore, I merged two channel information with "bitwise_and". After that, I combined it with edge-detected binary image. The combined image can detect both yellow and white line strongly, and eliminate any shadows or bright lights. 
+
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/s_channel_result.png)
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/h_channel_result.png) 
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/combined_result.png) 
