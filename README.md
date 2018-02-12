@@ -39,10 +39,11 @@ Below is project pipeline used in this project.
 - Within the ROI, I extract the lane line candidates via Hough Transform algorithm. Hough transform algorithm returns line starting point(x1,y1) and end point(x2,y2) coordinates of candidates lines. Because lane-line can be distingushed clearly, I used the parameters of Hough transform aggressively in order to extract only distinct lane-line(min_line_length=35, max_line_gap=20). 
 
 **5) Draw lines** 
-- After extracting the lane line candidates, I draw the lines 
-## The Result
-1) Cityscape dataset test images
-- Mostly, it could pretty much classify most of the objects.
+- After extracting the lane line candidates via Hough transform, I initially calculate the slope of the every line. Then, I averaged the slope and calculate the x,y intercept to draw the one left and one right line. Since the slope of the lane line is within certain boundary, I removed the outlier line (if the slope is too high or too low) when calculating the average. The below is the lane line drawn on the image. 
+![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/Lanefind_result.png)
 
-2) Recored road video (Germany)
-- I applied the trained model to the real road video. It showed good performance. You can see the full video (semantic_output.mp4) in my repo. 
+**6) Draw lines for video** 
+The location of lane line is not abruptly changed since vehicle is statically driving in most of times. So, I made a tracking algorithm which uses several previous image frames on video and averages the location of lane lines. With this approach, even though we wrongly detect the lane line in one image frame due to the shadows or lights, it would not be much deviated from the original location because the correctly detected information of several previous images would successfully compensate it. If you have chance to see the video (on my github repo), the lane line is not much deviated from the ground truth even in high shadow or light conditions. Rather than that, it is very robust to outside environment and detect the lane line in a very steady way.    
+
+## The Conclusion
+- Lane line detection in camera images is very basic functions in self-driving vehicle. However, stable lane line detection is still a difficult issue to be resolved. In this project, I implemented two unique approaches to detect stable lane line. First of all, I used several color channels not only RGB channel but also HLS and HSV channel in order to extract correctly the lane line in a variety of environment. Secondly, I used the tracking algorithm for stable lane line detection for video images. My works here could be the one potential solution for improved detection algorithm. 
