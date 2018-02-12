@@ -30,10 +30,16 @@ Below is project pipeline used in this project.
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/combined_result.png) 
 
 **3) Masking with ROI (Region of Interest)** 
-- I used 4 vertices for the masking with ROI : (100,height),(width/2-45,height/2+60),(width/2+45,height/2+60),(width-50,height)
+- I used 4 vertices for the trapezoid masking with ROI : (100,height),(width/2-45,height/2+60),(width/2+45,height/2+60),(width-
+50,height). Because the ADAS camera is mounted fixed location (behind the room mirror), the marking region generally works for almost every camera image.  
 - Below image is extracted binary image from our ROI(region of interest)
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/masked_result.png)
 
+**4) Hough Tranform** 
+- Within the ROI, I extract the lane line candidates via Hough Transform algorithm. Hough transform algorithm returns line starting point(x1,y1) and end point(x2,y2) coordinates of candidates lines. Because lane-line can be distingushed clearly, I used the parameters of Hough transform aggressively in order to extract only distinct lane-line(min_line_length=35, max_line_gap=20). 
+
+**5) Draw lines** 
+- After extracting the lane line candidates, I draw the lines 
 ## The Result
 1) Cityscape dataset test images
 - Mostly, it could pretty much classify most of the objects.
