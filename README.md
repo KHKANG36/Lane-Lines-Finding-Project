@@ -39,7 +39,7 @@ Below is project pipeline used in this project.
 - Within the ROI, I extract the lane line candidates via Hough Transform algorithm. Hough transform algorithm returns line starting point(x1,y1) and end point(x2,y2) coordinates of candidates lines. Because lane-line can be distingushed clearly, I used the parameters of Hough transform aggressively in order to extract only distinct lane-line(min_line_length=35, max_line_gap=20). 
 
 **5) Draw lines** 
-- After extracting the lane line candidates via Hough transform, I initially calculate the slope of the every line. Then, I averaged the slope and calculate the x,y intercept to draw the one left and one right line. Since the slope of the lane line is within certain boundary, I removed the outlier line (if the slope is too high or too low) when calculating the average. Refer to the lane line on the image example as below.
+- After extracting the lane line candidates via Hough transform, I initially calculate the slope of the every line. Then, I averaged the slope and calculate the x,y intercept to draw the one left and one right line. Since the slope of the lane line is within certain boundary, I removed the outlier line (if the slope is too high or too low) when calculating the average.
 ![Test image](https://github.com/KHKANG36/Lane-Lines-Finding-Project/blob/master/sample_images/Lanefind_result.png)
 
 **6) Draw lines for video** 
